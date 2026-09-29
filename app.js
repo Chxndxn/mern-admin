@@ -7,6 +7,7 @@ const promisify = require("es6-promisify");
 
 const apiRouter = require("./routes/api");
 const authApiRouter = require("./routes/authApi");
+const promApiRouter = require("./routes/promApi");
 
 const errorHandlers = require("./handlers/errorHandlers");
 
@@ -70,6 +71,8 @@ app.use("/api", authApiRouter);
 
 // for development & production don't use this line app.use("/api", apiRouter); , this is just demo login contoller
 app.use("/api", apiRouter);
+
+app.use("/api", promApiRouter);
 
 //uncomment line below // app.use("/api", isValidToken, apiRouter);
 // app.use("/api", isValidToken, apiRouter);
